@@ -272,6 +272,8 @@ body.terminal-body {
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  position: relative;
+  z-index: 15;
 }
 
 .avatar-img {
