@@ -34,65 +34,87 @@
     </main>
   </div>
 
-  <div class="terminal-container members-container encrypted-container hidden-content" id="members-content">
+  <div class="terminal-container members-container" id="members-content">
     <section class="members-section">
-      <div class="glitch-overlay" id="glitch-overlay">
-        <div class="matrix-lines"></div>
-      </div>
-      <h2 class="section-title">> INTEGRANTES [ENCRYPTED]</h2>
-      <div class="members-grid">
-          <!-- Hector -->
-          <div class="member-card">
+      <h2 class="section-title">> INTEGRANTES</h2>
+
+      <div class="carousel-wrapper">
+        <button id="prev-btn" class="nav-btn" aria-label="Previous member">&lt; PREV</button>
+
+        <div class="carousel-card-container">
+          <!-- Member Card 1: Hector -->
+          <div class="member-card active-card" data-index="0">
             <div class="avatar-frame">
               <img src="/hector.jpg" alt="Hector Hugo Utreras Caceres" class="avatar-img">
             </div>
-            <h3 class="member-name">Hector Hugo Utreras Caceres</h3>
-            <p class="member-desc">creo la pagina deaaa</p>
-            <a href="https://www.linkedin.com/in/heutreras" target="_blank" rel="noopener noreferrer" class="linkedin-link">[ LINKEDIN ]</a>
+            <div class="member-details">
+              <h3 class="member-name">Hector Hugo Utreras Caceres</h3>
+              <p class="member-desc">creo la pagina deaaa</p>
+              <a href="https://www.linkedin.com/in/heutreras" target="_blank" rel="noopener noreferrer" class="linkedin-link">[ LINKEDIN ]</a>
+            </div>
           </div>
 
-          <!-- Jefferson -->
-          <div class="member-card">
+          <!-- Member Card 2: Jefferson -->
+          <div class="member-card" data-index="1">
             <div class="avatar-frame">
               <img src="/jefferson.png" alt="Jefferson Rodriguez Luna" class="avatar-img">
             </div>
-            <h3 class="member-name">Jefferson Rodriguez Luna</h3>
-            <p class="member-desc">Hola</p>
-            <a href="https://www.linkedin.com/in/rodriguezjefferson" target="_blank" rel="noopener noreferrer" class="linkedin-link">[ LINKEDIN ]</a>
+            <div class="member-details">
+              <h3 class="member-name">Jefferson Rodriguez Luna</h3>
+              <p class="member-desc">Hola</p>
+              <a href="https://www.linkedin.com/in/rodriguezjefferson" target="_blank" rel="noopener noreferrer" class="linkedin-link">[ LINKEDIN ]</a>
+            </div>
           </div>
 
-          <!-- Benjamin -->
-          <div class="member-card">
+          <!-- Member Card 3: Benjamin -->
+          <div class="member-card" data-index="2">
             <div class="avatar-frame placeholder-frame">
               <div class="avatar-placeholder">?</div>
             </div>
-            <h3 class="member-name">Benjamin Mauricio Suazo Madariaga</h3>
-            <p class="member-desc">Descripcion</p>
-            <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            <div class="member-details">
+              <h3 class="member-name">Benjamin Mauricio Suazo Madariaga</h3>
+              <p class="member-desc">Descripcion</p>
+              <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            </div>
           </div>
 
-          <!-- Ignacio -->
-          <div class="member-card">
+          <!-- Member Card 4: Ignacio -->
+          <div class="member-card" data-index="3">
             <div class="avatar-frame placeholder-frame">
               <div class="avatar-placeholder">?</div>
             </div>
-            <h3 class="member-name">Ignacio</h3>
-            <p class="member-desc">Descripcion</p>
-            <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            <div class="member-details">
+              <h3 class="member-name">Ignacio</h3>
+              <p class="member-desc">Descripcion</p>
+              <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            </div>
           </div>
 
-          <!-- Slot disponible -->
-          <div class="member-card slot-card">
+          <!-- Member Card 5: Slot disponible -->
+          <div class="member-card" data-index="4">
             <div class="avatar-frame placeholder-frame">
               <div class="avatar-placeholder">?</div>
             </div>
-            <h3 class="member-name">[ DISPONIBLE ]</h3>
-            <p class="member-desc">no me se el nombre del man</p>
-            <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            <div class="member-details">
+              <h3 class="member-name">no me se el nombre del man</h3>
+              <p class="member-desc">Descripcion</p>
+              <span class="linkedin-disabled">[ LINKEDIN ]</span>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+
+        <button id="next-btn" class="nav-btn" aria-label="Next member">NEXT &gt;</button>
+      </div>
+
+      <div class="carousel-indicators" id="carousel-indicators">
+        <span class="dot-indicator active" data-index="0"></span>
+        <span class="dot-indicator" data-index="1"></span>
+        <span class="dot-indicator" data-index="2"></span>
+        <span class="dot-indicator" data-index="3"></span>
+        <span class="dot-indicator" data-index="4"></span>
+      </div>
+    </section>
+  </div>
   </div>
   <script src="/app.js"></script>
 </body>

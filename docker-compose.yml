@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  aws-landing-web:
+    build: .
+    container_name: aws_landing_app
+    ports:
+      - "3001:3001"
+    restart: always
+    environment:
+      - PORT=3001

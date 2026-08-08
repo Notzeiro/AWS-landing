@@ -24,27 +24,48 @@ window.addEventListener('DOMContentLoaded', () => {
     membersContent.classList.remove('hidden-content');
   }, 1650);
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -10% 0px',
-    threshold: 0.15
-  };
+  // Carousel logic
+  const cards = document.querySelectorAll('.member-card');
+  const dots = document.querySelectorAll('.dot-indicator');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  let currentIndex = 0;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        membersContent.classList.remove('encrypted-container');
-        membersContent.classList.add('decrypted-container', 'shake-effect');
-
-        setTimeout(() => {
-          membersContent.classList.remove('shake-effect');
-        }, 400);
+  function showMember(index) {
+    cards.forEach((card, i) => {
+      if (i === index) {
+        card.classList.add('active-card');
       } else {
-        membersContent.classList.remove('decrypted-container', 'shake-effect');
-        membersContent.classList.add('encrypted-container');
+        card.classList.remove('active-card');
       }
     });
-  }, observerOptions);
 
-  observer.observe(membersContent);
+    dots.forEach((dot, i) => {
+      if (i === index) {
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+      }
+    });
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === 0) ? cards.length - 1 : currentIndex - 1;
+      showMember(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex === cards.length - 1) ? 0 : currentIndex + 1;
+      showMember(currentIndex);
+    });
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const idx = parseInt(dot.getAttribute('data-index'), 10);
+        currentIndex = idx;
+        showMember(currentIndex);
+      });
+    });
+  }
 });
