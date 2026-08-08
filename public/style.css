@@ -32,6 +32,67 @@ body.terminal-body {
   pointer-events: none;
 }
 
+.intro-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  background-color: #0d0d0d;
+}
+
+.loader-line {
+  height: 40px;
+  width: 4px;
+  background-color: #00ff66;
+  box-shadow: 0 0 10px #00ff66;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: width 0.6s ease-in-out, height 0.5s ease-in-out;
+}
+
+.loader-line.expand-line {
+  width: 260px;
+}
+
+.loader-text {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.85rem;
+  color: #050505;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.loader-text.fade-out {
+  opacity: 0;
+}
+
+.dots {
+  display: inline-block;
+  animation: dotsBlink 1.2s infinite;
+}
+
+@keyframes dotsBlink {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.loader-line.shrink-line {
+  width: 4px;
+}
+
+.hidden-content {
+  display: none !important;
+}
+
 .terminal-container {
   border: 4px solid #00ff66;
   background: #050505;
@@ -40,6 +101,25 @@ body.terminal-body {
   max-width: 900px;
   padding: 30px;
   position: relative;
+}
+
+.terminal-container.expand-box {
+  animation: boxGrow 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes boxGrow {
+  0% {
+    transform: scale(0.05, 0.005);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1, 0.02);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
 }
 
 .terminal-header {

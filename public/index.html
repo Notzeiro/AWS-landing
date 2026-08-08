@@ -12,7 +12,14 @@
 </head>
 <body class="terminal-body">
   <div class="scanlines"></div>
-  <div class="terminal-container">
+
+  <div id="intro-loader" class="intro-loader">
+    <div class="loader-line" id="loader-line">
+      <span class="loader-text" id="loader-text">CARGANDO<span class="dots">...</span></span>
+    </div>
+  </div>
+
+  <div class="terminal-container hidden-content" id="main-content">
     <header class="terminal-header">
       <span class="status-dot"></span>
       <span class="header-title">SYSTEM_TERMINAL_V1.0</span>
@@ -26,5 +33,6 @@
       </div>
     </main>
   </div>
+  <script src="/app.js"></script>
 </body>
 </html>
