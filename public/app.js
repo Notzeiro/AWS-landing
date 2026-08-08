@@ -6,19 +6,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setTimeout(() => {
     loaderLine.classList.add('expand-line');
-  }, 100);
+  }, 50);
 
   setTimeout(() => {
     loaderText.classList.add('fade-out');
-  }, 2200);
+  }, 1100);
 
   setTimeout(() => {
     loaderLine.classList.add('shrink-line');
-  }, 2700);
+  }, 1350);
 
   setTimeout(() => {
     introLoader.style.display = 'none';
     mainContent.classList.remove('hidden-content');
     mainContent.classList.add('expand-box');
-  }, 3300);
+  }, 1650);
 });

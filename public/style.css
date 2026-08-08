@@ -54,7 +54,7 @@ body.terminal-body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  transition: width 0.6s ease-in-out, height 0.5s ease-in-out;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), height 0.3s ease-in-out;
 }
 
 .loader-line.expand-line {
@@ -67,22 +67,26 @@ body.terminal-body {
   color: #050505;
   white-space: nowrap;
   opacity: 1;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.25s ease;
 }
 
 .loader-text.fade-out {
   opacity: 0;
 }
 
-.dots {
-  display: inline-block;
-  animation: dotsBlink 1.2s infinite;
+.dot {
+  opacity: 0;
+  animation: dotStep 0.9s infinite;
 }
 
-@keyframes dotsBlink {
-  0% { opacity: 0.2; }
-  50% { opacity: 1; }
-  100% { opacity: 0.2; }
+.dot.d1 { animation-delay: 0.0s; }
+.dot.d2 { animation-delay: 0.3s; }
+.dot.d3 { animation-delay: 0.6s; }
+
+@keyframes dotStep {
+  0% { opacity: 0; }
+  33% { opacity: 1; }
+  100% { opacity: 1; }
 }
 
 .loader-line.shrink-line {
