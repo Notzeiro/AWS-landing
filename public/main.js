@@ -1,6 +1,6 @@
 // Archivo JS principal (Vanilla JS)
 
-console.log('AWS SBG Plaza Vespucio Console Initialized');
+console.log('AWS SBG Plaza Vespucio Space Edition Initialized');
 
 document.addEventListener('DOMContentLoaded', () => {
   // --- Intro Splash Screen Logic ---
@@ -12,8 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
       document.body.style.overflow = '';
       setTimeout(() => {
         introSplash.style.display = 'none';
-      }, 750);
-    }, 1400);
+      }, 600);
+    }, 900);
+  }
+
+  // --- Dynamic Star Generator ---
+  const starsContainer = document.getElementById('space-stars');
+  if (starsContainer) {
+    const starCount = window.innerWidth <= 768 ? 45 : 90;
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      const sizeType = Math.random();
+      if (sizeType > 0.85) {
+        star.classList.add('star-large');
+      } else if (sizeType > 0.5) {
+        star.classList.add('star-medium');
+      } else {
+        star.classList.add('star-small');
+      }
+
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.setProperty('--duration', `${Math.random() * 3 + 1.5}s`);
+      star.style.setProperty('--delay', `${Math.random() * 3}s`);
+      fragment.appendChild(star);
+    }
+    starsContainer.appendChild(fragment);
   }
 
   // --- Modal System ---
@@ -72,62 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Efecto Animación Infinita para las capas geométricas (Shapes)
-  const shapes = document.querySelectorAll('.bg-shape');
-
-  const shapeData = Array.from(shapes).map((shape) => {
-    const rect = shape.getBoundingClientRect();
-    const startX = rect.left + window.scrollX;
-    const startY = rect.top + window.scrollY;
-
-    shape.style.top = '0px';
-    shape.style.left = '0px';
-    shape.style.right = 'auto';
-    shape.style.bottom = 'auto';
-
-    const isHorizontal = Math.random() > 0.5;
-    const dir = Math.random() > 0.5 ? 1 : -1;
-    const speed = Math.random() * 1.2 + 0.3;
-
-    return {
-      el: shape,
-      x: startX,
-      y: startY,
-      vx: isHorizontal ? dir * speed : 0,
-      vy: !isHorizontal ? dir * speed : 0,
-      width: shape.offsetWidth,
-      height: shape.offsetHeight,
-    };
-  });
-
-  function animateShapes() {
-    const docWidth = document.documentElement.scrollWidth;
-    const docHeight = document.documentElement.scrollHeight;
-
-    shapeData.forEach((data) => {
-      data.x += data.vx;
-      data.y += data.vy;
-
-      if (data.vx > 0 && data.x > docWidth) {
-        data.x = -data.width;
-      } else if (data.vx < 0 && data.x + data.width < 0) {
-        data.x = docWidth;
-      }
-
-      if (data.vy > 0 && data.y > docHeight) {
-        data.y = -data.height;
-      } else if (data.vy < 0 && data.y + data.height < 0) {
-        data.y = docHeight;
-      }
-
-      data.el.style.transform = `translate3d(${data.x}px, ${data.y}px, 0)`;
-    });
-
-    requestAnimationFrame(animateShapes);
-  }
-
-  requestAnimationFrame(animateShapes);
-
   // --- MAC Window Control Buttons ---
   const btnClose = document.getElementById('btn-close-terminal');
   const errorScreen = document.getElementById('terminal-error-screen');
@@ -163,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const now = new Date();
     const timeString = now.toLocaleTimeString('es-CL', { hour12: false });
-    return `<span style="color: var(--aws-orange);">[${timeString}]</span> <span style="color: var(--aws-mint);">builder@pv</span>:<span style="color: var(--aws-blue);">~/workspace</span> <span style="color: var(--text-light);">$</span>`;
+    return `<span style="color: var(--aws-orange);">[${timeString}]</span> <span style="color: var(--aws-mint);">builder@pv</span>:<span style="color: var(--aws-blue);">~/space</span> <span style="color: var(--text-light);">$</span>`;
   }
 
   function formatCommand(cmd) {
@@ -286,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function getCursorOffset() {
         const span = document.createElement('span');
-        span.style.fontFamily = "'Fira Code', monospace";
+        span.style.fontFamily = "'Space Grotesk', var(--font-main)";
         span.style.fontSize = '0.95rem';
         span.style.visibility = 'hidden';
         span.style.whiteSpace = 'pre';
@@ -343,6 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <span style="color: var(--aws-mint);">help</span>       - Lista todos los comandos
 <span style="color: var(--aws-mint);">links</span>      - Enlaces a nuestras redes oficiales
 <span style="color: var(--aws-mint);">free</span>       - Beneficios y cursos 100% gratuitos
+<span style="color: var(--aws-mint);">launch</span>     - 🚀 Despega hacia la nube
 <span style="color: var(--aws-mint);">whoami</span>     - Información de usuario
 <span style="color: var(--aws-mint);">clear</span>      - Limpia la pantalla
 <span style="color: var(--aws-mint);">exit</span>       - Reinicia la consola`,
@@ -356,9 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
 • <span style="color: var(--aws-blue);">LinkedIn:</span> https://www.linkedin.com/company/aws-sbg-duoc-uc-pv
 • <span style="color: var(--aws-purple);">Instagram:</span> https://www.instagram.com/aws.sbg.duocpv/
 • <span style="color: var(--aws-magenta);">IBM Ambassador:</span> https://www.yourbigyear.com/ibm-skillsbuild-ambassador-program`,
-        whoami: () => `builder@plaza-vespucio (AWS SBG Community Member)`,
+        launch: () => `<span style="color: var(--aws-mint);">🚀 ¡Ignición iniciada! T-minus 3.. 2.. 1.. ☁️ Rumbo a AWS Cloud!</span>`,
+        whoami: () => `builder@plaza-vespucio (AWS SBG Community Astronaut)`,
         sudo: () => `<span style="color: var(--aws-mint);">Acceso concedido. ¡A construir en la nube! 🚀</span>`,
-        rm: () => `<span style="color: var(--mac-red);">Operación cancelada: el entorno está protegido.</span>`,
+        rm: () => `<span style="color: var(--mac-red);">Operación cancelada: el entorno espacial está protegido.</span>`,
       };
 
       let commandHistory = [];

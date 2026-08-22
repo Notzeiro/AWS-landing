@@ -28,35 +28,44 @@
         <div class="splash-logo-wrapper">
           <img src="/logo-pv.jpg" alt="AWS SBG Plaza Vespucio Logo" class="splash-logo" />
         </div>
-        <div class="splash-loader-bar">
-          <div class="splash-progress"></div>
-        </div>
-        <p class="splash-text">INITIALIZING AWS SBG PLAZA VESPUCIO...</p>
+        <p class="splash-text">AWS SBG PLAZA VESPUCIO</p>
       </div>
     </div>
 
-    <!-- Tech Grid Background -->
-    <div class="tech-grid-bg"></div>
-
-    <!-- Parallax Decorative Shapes -->
-    <div class="parallax-shapes">
-      <div class="bg-shape shape-1" data-speed="0.2"></div>
-      <div class="bg-shape shape-2" data-speed="0.4"></div>
-      <div class="bg-shape shape-3" data-speed="0.15"></div>
-      <div class="bg-shape shape-4" data-speed="0.3"></div>
-      <div class="bg-shape shape-5" data-speed="0.5"></div>
-      <div class="bg-shape shape-6" data-speed="0.25"></div>
-      <div class="bg-shape shape-7" data-speed="0.1"></div>
-      <div class="bg-shape shape-8" data-speed="0.3"></div>
-      <div class="bg-shape shape-9" data-speed="0.2"></div>
-      <div class="bg-shape shape-10" data-speed="0.15"></div>
-      <div class="bg-shape shape-11" data-speed="0.35"></div>
-      <div class="bg-shape shape-12" data-speed="0.1"></div>
-      <div class="bg-shape shape-14" data-speed="0.2"></div>
-      <div class="bg-shape shape-15" data-speed="0.25"></div>
-      <div class="bg-shape shape-16" data-speed="0.4"></div>
-      <div class="bg-shape shape-17" data-speed="0.15"></div>
-      <div class="bg-shape shape-18" data-speed="0.25"></div>
+    <!-- Space Exterior Background with GIF, Stars and Rockets -->
+    <div class="space-bg-container">
+      <div class="space-gif-layer"></div>
+      <div class="space-overlay"></div>
+      <div class="stars-container" id="space-stars"></div>
+      <div class="rockets-container">
+        <!-- SVG Rockets (Sin emojis) -->
+        <div class="flying-rocket rocket-1">
+          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5 2C13.5 2 17 4 19 8C20 10 20.5 12.5 20.5 12.5L16.5 16.5C16.5 16.5 14 16 12 15C8 13 6 9.5 6 9.5L13.5 2Z" fill="#FF9900"/>
+            <path d="M9.5 11.5L4 13L2 19L8 17L9.5 11.5Z" fill="#42B4FF"/>
+            <path d="M12.5 14.5L11 20L17 22L15.5 16.5L12.5 14.5Z" fill="#AD5CFF"/>
+            <circle cx="14.5" cy="8.5" r="1.5" fill="#FFFFFF"/>
+            <path d="M4 20L2 22L6 22L4 20Z" fill="#FF57E9"/>
+          </svg>
+        </div>
+        <div class="flying-rocket rocket-2">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3C7 3 3 7 3 12C3 14 4.5 16 7 17L6 21L10 19.5C10.6 19.8 11.3 20 12 20C17 20 21 16 21 11C21 6 17 3 12 3Z" fill="#00E582"/>
+            <circle cx="12" cy="10" r="3" fill="#0F1523"/>
+            <circle cx="12" cy="10" r="1.5" fill="#42B4FF"/>
+            <path d="M2 12C2 12 7 15 12 15C17 15 22 12 22 12" stroke="#FFFFFF" stroke-width="1.5"/>
+          </svg>
+        </div>
+        <div class="flying-rocket rocket-3">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.5 2C13.5 2 17 4 19 8C20 10 20.5 12.5 20.5 12.5L16.5 16.5C16.5 16.5 14 16 12 15C8 13 6 9.5 6 9.5L13.5 2Z" fill="#42B4FF"/>
+            <circle cx="14.5" cy="8.5" r="1.5" fill="#FFFFFF"/>
+            <path d="M6 18L2 22L6 20L6 18Z" fill="#FF9900"/>
+          </svg>
+        </div>
+        <div class="shooting-star shooting-star-1"></div>
+        <div class="shooting-star shooting-star-2"></div>
+      </div>
     </div>
 
     <!-- 1. HERO SECTION -->
@@ -84,15 +93,13 @@
           >
             <svg
               aria-hidden="true"
-              width="22"
-              height="22"
-              viewBox="0 0 2580 3870"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
             >
               <path
-                d="M2150 860H1720V1720H2580V2150H2150V2580H1720V3010H1290V3440H860V3870H430V3010H860V2150H0V1720H430V1290H860V860H1290V430H1720V0H2150V860Z"
-                fill="#AD5CFF"
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
               />
             </svg>
             UNIRSE AL WHATSAPP
@@ -122,7 +129,14 @@
             href="#free-resources"
             class="neo-btn btn-purple"
           >
-            🎁 RECURSOS GRATIS
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 12 20 22 4 22 4 12"></polyline>
+              <rect x="2" y="7" width="20" height="5"></rect>
+              <line x1="12" y1="22" x2="12" y2="7"></line>
+              <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
+              <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
+            </svg>
+            RECURSOS GRATIS
           </a>
         </div>
       </div>
@@ -161,7 +175,7 @@
               <p
                 class="typing-line"
                 data-text="[INFO] Comunidad activa en Duoc UC Plaza Vespucio - Conectando estudiantes al ecosistema Cloud & AI."
-                style="color: #a1aab5"
+                style="color: #94a3b8"
               ></p>
               <p
                 class="typing-line"
@@ -187,7 +201,7 @@
                       background: transparent;
                       border: none;
                       color: #fff;
-                      font-family: 'Fira Code', var(--font-mono);
+                      font-family: var(--font-heading);
                       font-size: 0.95rem;
                       width: 100%;
                       outline: none;
@@ -210,31 +224,36 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px;
-            border-radius: 12px;
-            background: rgba(18, 22, 30, 0.9);
-            border: 2px solid var(--aws-orange);
+            padding: 35px;
+            border-radius: 16px;
+            background: rgba(15, 21, 35, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             margin: 20px auto;
-            max-width: 600px;
+            max-width: 500px;
           "
         >
           <img
             src="/logo-pv.jpg"
-            width="90"
+            width="80"
             alt="SBG Icon"
-            style="margin-bottom: 20px; border-radius: 12px; border: 2px solid var(--aws-orange)"
+            style="margin-bottom: 16px; border-radius: 16px; border: 2px solid var(--aws-orange)"
           />
-          <h3 style="font-size: 1.8rem; margin-bottom: 10px; color: var(--mac-red); font-family: var(--font-pixel);">
-            SESSION TERMINATED
+          <h3 style="font-size: 1.5rem; margin-bottom: 8px; color: var(--text-light);">
+            Terminal Cerrada
           </h3>
-          <p style="font-size: 0.95rem; margin-bottom: 25px; color: var(--text-muted); font-family: var(--font-sans);">
-            Has cerrado la consola de comandos. Puedes reabrirla cuando quieras.
+          <p style="font-size: 0.95rem; margin-bottom: 20px; color: var(--text-muted);">
+            Puedes volver a iniciar la sesión de comandos en cualquier momento.
           </p>
           <button
             id="reopen-terminal-btn"
             class="neo-btn"
           >
-            REABRIR TERMINAL MAC
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="4 17 10 11 4 5"></polyline>
+              <line x1="12" y1="19" x2="20" y2="19"></line>
+            </svg>
+            Abrir Terminal
           </button>
         </div>
       </div>
@@ -243,7 +262,7 @@
     <!-- 3. COSAS GRATIS & RECURSOS (SECCIÓN EXCLUSIVA) -->
     <section id="free-resources" class="layer-section solid-bg" style="z-index: 3">
       <div class="container">
-        <h2 class="section-title">🎁 Cosas Gratis & Certificaciones</h2>
+        <h2 class="section-title">Cosas Gratis & Certificaciones</h2>
         <p class="section-subtitle">
           Beneficios, programas gratuitos y certificaciones oficiales disponibles para nuestra comunidad estudiantil
         </p>
@@ -348,18 +367,18 @@
       </div>
     </section>
 
-    <!-- 4. ALIANZAS & CRECIMIENTO / PRÓXIMOS ENCUENTROS (INVERTIDOS DE LUGAR Y FONT MODERNO) -->
+    <!-- 4. ALIANZAS & CRECIMIENTO / PRÓXIMOS ENCUENTROS -->
     <section id="community-sections" class="layer-section" style="z-index: 4">
       <div class="container">
         <div class="events-alliances-split">
-          <!-- Alianzas y Crecimiento (Ahora primero a la izquierda) -->
+          <!-- Alianzas y Crecimiento -->
           <div class="tech-card shadow-blue modern-event-card">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px">
                 <span class="badge" style="background: rgba(66, 180, 255, 0.15); color: var(--aws-blue); border: 1px solid rgba(66, 180, 255, 0.4)">ALIANZA GLOBAL</span>
                 <span class="badge badge-mint">ACTIVO</span>
               </div>
-              <h3 style="color: var(--aws-blue); font-family: var(--font-pixel)">
+              <h3 style="color: var(--aws-blue)">
                 Alianzas & Crecimiento Profesional
               </h3>
               <span class="event-meta-info">Ecosistema Colaborativo Internacional</span>
@@ -385,14 +404,14 @@
             </div>
           </div>
 
-          <!-- Próximos Encuentros (Ahora segundo a la derecha) -->
+          <!-- Próximos Encuentros -->
           <div class="tech-card shadow-mint modern-event-card">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px">
                 <span class="badge badge-mint">MEETUP</span>
                 <span class="badge badge-free">GRATUITO</span>
               </div>
-              <h3 style="color: var(--aws-mint); font-family: var(--font-pixel)">
+              <h3 style="color: var(--aws-mint)">
                 Próximos Encuentros & Workshops
               </h3>
               <span class="event-meta-info">Duoc UC Plaza Vespucio · Modalidad Híbrida</span>
@@ -419,99 +438,91 @@
           </div>
         </div>
 
-        <!-- 5. SOCIALS CARD -->
-        <div style="margin-top: 40px">
-          <div class="tech-card shadow-purple" style="text-align: center">
-            <h2 class="section-title" style="margin-bottom: 15px; font-size: 1.8rem">
-              Conecta con Nuestras Redes
-            </h2>
-            <p class="section-subtitle" style="margin-bottom: 25px">
-              Sigue nuestros canales oficiales para no perderte convocatorias, material y fechas de eventos
+        <!-- 5. SOCIALS SECTION: DISEÑO ELEGANTE Y MODERNO EN BENTO GRID -->
+        <div id="socials-bento" style="margin-top: 60px">
+          <div class="socials-hero-header">
+            <h2 class="section-title">Canales de la Comunidad</h2>
+            <p class="section-subtitle">
+              Sigue nuestros canales oficiales para enterarte de talleres, eventos y convocatorias
             </p>
-            <div class="socials-quadrant">
-              <a
-                href="https://www.meetup.com/aws-sbg-at-duoc-uc-plaza-vespucio/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="neo-btn btn-magenta"
-              >
-                <svg
-                  aria-hidden="true"
-                  role="img"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M6.98.555a.518.518 0 0 0-.105.011.53.53 0 1 0 .222 1.04.533.533 0 0 0 .409-.633.531.531 0 0 0-.526-.418zm6.455.638a.984.984 0 0 0-.514.143.99.99 0 1 0 1.02 1.699.99.99 0 0 0 .34-1.36.992.992 0 0 0-.846-.482zm-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248 3.33 3.33 0 0 0-1.46.551 3.374 3.374 0 0 0-.94 4.562 3.634 3.634 0 0 0-.605 4.649 3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69 4.238 4.238 0 0 0 2.584-.739 4.274 4.274 0 0 0 1.19-5.789 2.466 2.466 0 0 0 .433-3.308 2.448 2.448 0 0 0-1.316-.934 4.436 4.436 0 0 0-.776-2.873 4.467 4.467 0 0 0-5.195-1.656 5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135.758.758 0 1 0 .863 1.248.757.757 0 0 0 .193-1.055.758.758 0 0 0-.633-.328zm15.994 2.37a.842.842 0 0 0-.47.151.845.845 0 1 0 1.175.215.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393.24.227.414.089.534.02.208-.122.369-.219.984-.208.633.011 1.363.237 1.514 1.317.168 1.199-1.966 4.289-1.817 5.722.106 1.01 1.815.299 1.96 1.22.186 1.198-2.136.753-2.667.493-.832-.408-1.337-1.34-1.12-2.26.16-.688 1.7-3.498 1.757-3.93.059-.44-.177-.476-.324-.484-.19-.01-.34.081-.526.362-.169.255-2.082 4.085-2.248 4.398-.296.56-.67.694-1.044.674-.548-.029-.798-.32-.72-.848.047-.31 1.26-3.049 1.323-3.476.039-.265-.013-.546-.275-.68-.263-.135-.572.07-.664.227-.128.215-1.848 4.706-2.032 5.038-.316.576-.65.76-1.152.784-1.186.056-2.065-.92-1.678-2.116.173-.532 1.316-4.571 1.895-5.599.389-.69 1.468-1.216 2.217-.892.387.167.925.437 1.084.507.366.163.759-.277.913-.412.155-.134.302-.276.49-.357.142-.06.343-.095.532-.094zm10.88 2.057a.468.468 0 0 0-.093.011.467.467 0 0 0-.36.555.47.47 0 0 0 .557.36.47.47 0 0 0 .36-.557.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434 1 1 0 1 0 1.39-.258 1 1 0 0 0-.558-.176zm21.294 2.094a.635.635 0 0 0-.127.013.627.627 0 0 0-.48.746.628.628 0 0 0 .746.483.628.628 0 0 0 .482-.746.63.63 0 0 0-.621-.496zm-18.24 6.097a.453.453 0 0 0-.092.012.464.464 0 1 0 .195.908.464.464 0 0 0 .356-.553.465.465 0 0 0-.459-.367zm13.675 1.55a1.044 1.044 0 0 0-.583.187 1.047 1.047 0 1 0 1.456.265 1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115.646.646 0 0 0-.164.899.646.646 0 0 0 .899.164.646.646 0 0 0 .164-.898.646.646 0 0 0-.54-.28z"
-                  />
+          </div>
+
+          <div class="social-cards-grid">
+            <!-- Card 1: WhatsApp -->
+            <a
+              href="https://chat.whatsapp.com/K5fZKAhGUkjGcPiIHY8PK5"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-bento-card card-whatsapp"
+            >
+              <div class="social-bento-icon icon-whatsapp">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
-                MEETUP
-              </a>
-              <a
-                href="https://www.linkedin.com/company/aws-sbg-duoc-uc-pv"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="neo-btn btn-blue"
-              >
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"
-                  />
+              </div>
+              <div class="social-bento-content">
+                <h3>Grupo WhatsApp</h3>
+                <p>Chat diario y anuncios directos</p>
+              </div>
+              <div class="social-bento-arrow">→</div>
+            </a>
+
+            <!-- Card 2: Meetup -->
+            <a
+              href="https://www.meetup.com/aws-sbg-at-duoc-uc-plaza-vespucio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-bento-card card-meetup"
+            >
+              <div class="social-bento-icon icon-meetup">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.98.555a.518.518 0 0 0-.105.011.53.53 0 1 0 .222 1.04.533.533 0 0 0 .409-.633.531.531 0 0 0-.526-.418zm6.455.638a.984.984 0 0 0-.514.143.99.99 0 1 0 1.02 1.699.99.99 0 0 0 .34-1.36.992.992 0 0 0-.846-.482zm-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248 3.33 3.33 0 0 0-1.46.551 3.374 3.374 0 0 0-.94 4.562 3.634 3.634 0 0 0-.605 4.649 3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69 4.238 4.238 0 0 0 2.584-.739 4.274 4.274 0 0 0 1.19-5.789 2.466 2.466 0 0 0 .433-3.308 2.448 2.448 0 0 0-1.316-.934 4.436 4.436 0 0 0-.776-2.873 4.467 4.467 0 0 0-5.195-1.656 5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135.758.758 0 1 0 .863 1.248.757.757 0 0 0 .193-1.055.758.758 0 0 0-.633-.328zm15.994 2.37a.842.842 0 0 0-.47.151.845.845 0 1 0 1.175.215.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393.24.227.414.089.534.02.208-.122.369-.219.984-.208.633.011 1.363.237 1.514 1.317.168 1.199-1.966 4.289-1.817 5.722.106 1.01 1.815.299 1.96 1.22.186 1.198-2.136.753-2.667.493-.832-.408-1.337-1.34-1.12-2.26.16-.688 1.7-3.498 1.757-3.93.059-.44-.177-.476-.324-.484-.19-.01-.34.081-.526.362-.169.255-2.082 4.085-2.248 4.398-.296.56-.67.694-1.044.674-.548-.029-.798-.32-.72-.848.047-.31 1.26-3.049 1.323-3.476.039-.265-.013-.546-.275-.68-.263-.135-.572.07-.664.227-.128.215-1.848 4.706-2.032 5.038-.316.576-.65.76-1.152.784-1.186.056-2.065-.92-1.678-2.116.173-.532 1.316-4.571 1.895-5.599.389-.69 1.468-1.216 2.217-.892.387.167.925.437 1.084.507.366.163.759-.277.913-.412.155-.134.302-.276.49-.357.142-.06.343-.095.532-.094zm10.88 2.057a.468.468 0 0 0-.093.011.467.467 0 0 0-.36.555.47.47 0 0 0 .557.36.47.47 0 0 0 .36-.557.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434 1 1 0 1 0 1.39-.258 1 1 0 0 0-.558-.176zm21.294 2.094a.635.635 0 0 0-.127.013.627.627 0 0 0-.48.746.628.628 0 0 0 .746.483.628.628 0 0 0 .482-.746.63.63 0 0 0-.621-.496zm-18.24 6.097a.453.453 0 0 0-.092.012.464.464 0 1 0 .195.908.464.464 0 0 0 .356-.553.465.465 0 0 0-.459-.367zm13.675 1.55a1.044 1.044 0 0 0-.583.187 1.047 1.047 0 1 0 1.456.265 1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115.646.646 0 0 0-.164.899.646.646 0 0 0 .899.164.646.646 0 0 0 .164-.898.646.646 0 0 0-.54-.28z"/>
                 </svg>
-                LINKEDIN
-              </a>
-              <a
-                href="https://www.instagram.com/aws.sbg.duocpv/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="neo-btn btn-purple"
-              >
-                <svg
-                  aria-hidden="true"
-                  role="img"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.352.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.903c-.419.164-1.059.36-2.226.413-1.272.057-1.65.07-4.85.07-3.201 0-3.586-.015-4.85-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.422-.36-1.062-.413-2.227-.057-1.272-.07-1.651-.07-4.851s.015-3.585.074-4.85c.06-1.167.255-1.814.41-2.235a3.71 3.71 0 01.9-1.38 3.637 3.637 0 011.38-.9c.422-.165 1.063-.36 2.227-.413 1.272-.057 1.65-.07 4.85-.07zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                  />
+              </div>
+              <div class="social-bento-content">
+                <h3>Meetup Plaza Vespucio</h3>
+                <p>Inscripción a eventos y talleres</p>
+              </div>
+              <div class="social-bento-arrow">→</div>
+            </a>
+
+            <!-- Card 3: LinkedIn -->
+            <a
+              href="https://www.linkedin.com/company/aws-sbg-duoc-uc-pv"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-bento-card card-linkedin"
+            >
+              <div class="social-bento-icon icon-linkedin">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zM3.55 9h3.564v11.452H3.55zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/>
                 </svg>
-                INSTAGRAM
-              </a>
-              <a
-                href="https://chat.whatsapp.com/K5fZKAhGUkjGcPiIHY8PK5"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="neo-btn btn-mint"
-              >
-                <svg
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
-                  />
+              </div>
+              <div class="social-bento-content">
+                <h3>LinkedIn Oficial</h3>
+                <p>Networking y novedades cloud</p>
+              </div>
+              <div class="social-bento-arrow">→</div>
+            </a>
+
+            <!-- Card 4: Instagram -->
+            <a
+              href="https://www.instagram.com/aws.sbg.duocpv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="social-bento-card card-instagram"
+            >
+              <div class="social-bento-icon icon-instagram">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.352.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.903c-.419.164-1.059.36-2.226.413-1.272.057-1.65.07-4.85.07-3.201 0-3.586-.015-4.85-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.422-.36-1.062-.413-2.227-.057-1.272-.07-1.651-.07-4.851s.015-3.585.074-4.85c.06-1.167.255-1.814.41-2.235a3.71 3.71 0 01.9-1.38 3.637 3.637 0 011.38-.9c.422-.165 1.063-.36 2.227-.413 1.272-.057 1.65-.07 4.85-.07zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                 </svg>
-                WHATSAPP
-              </a>
-            </div>
+              </div>
+              <div class="social-bento-content">
+                <h3>Instagram</h3>
+                <p>Fotos, resúmenes y comunidad</p>
+              </div>
+              <div class="social-bento-arrow">→</div>
+            </a>
           </div>
         </div>
       </div>
@@ -537,9 +548,8 @@
         <p
           style="
             margin-top: 15px;
-            font-size: 0.85rem;
+            font-size: 0.88rem;
             opacity: 0.7;
-            font-family: var(--font-pixel);
           "
         >
           © 2026 AWS SBG Plaza Vespucio - Chile.
