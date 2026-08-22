@@ -6,15 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Intro Splash Screen Logic ---
   const introSplash = document.getElementById('intro-splash');
   if (introSplash) {
-    // Evitar scroll durante el splash
     document.body.style.overflow = 'hidden';
     setTimeout(() => {
       introSplash.classList.add('splash-fade-out');
       document.body.style.overflow = '';
       setTimeout(() => {
         introSplash.style.display = 'none';
-      }, 900);
-    }, 1600);
+      }, 750);
+    }, 1400);
   }
 
   // --- Modal System ---
@@ -76,22 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Efecto Animación Infinita para las capas geométricas (Shapes)
   const shapes = document.querySelectorAll('.bg-shape');
 
-  // Asignar posiciones y velocidades iniciales
   const shapeData = Array.from(shapes).map((shape) => {
     const rect = shape.getBoundingClientRect();
     const startX = rect.left + window.scrollX;
     const startY = rect.top + window.scrollY;
 
-    // Desvincular de su anclaje CSS original para controlar con transform desde (0,0)
     shape.style.top = '0px';
     shape.style.left = '0px';
     shape.style.right = 'auto';
     shape.style.bottom = 'auto';
 
-    // Algunos horizontales, otros verticales
     const isHorizontal = Math.random() > 0.5;
     const dir = Math.random() > 0.5 ? 1 : -1;
-    const speed = Math.random() * 1.5 + 0.3;
+    const speed = Math.random() * 1.2 + 0.3;
 
     return {
       el: shape,
@@ -112,14 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
       data.x += data.vx;
       data.y += data.vy;
 
-      // Envolver horizontalmente
       if (data.vx > 0 && data.x > docWidth) {
         data.x = -data.width;
       } else if (data.vx < 0 && data.x + data.width < 0) {
         data.x = docWidth;
       }
 
-      // Envolver verticalmente
       if (data.vy > 0 && data.y > docHeight) {
         data.y = -data.height;
       } else if (data.vy < 0 && data.y + data.height < 0) {
@@ -132,25 +126,22 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(animateShapes);
   }
 
-  // Iniciar el bucle de animación
   requestAnimationFrame(animateShapes);
 
-  // --- Efecto Terminal Typing ---
-
-  // --- Window Control Buttons ---
+  // --- MAC Window Control Buttons ---
   const btnClose = document.getElementById('btn-close-terminal');
   const errorScreen = document.getElementById('terminal-error-screen');
   const reopenBtn = document.getElementById('reopen-terminal-btn');
 
   if (btnClose && errorScreen) {
     btnClose.addEventListener('click', () => {
-      const win = document.querySelector('.terminal-window');
+      const win = document.querySelector('.mac-terminal-window');
       if (win) win.style.setProperty('display', 'none', 'important');
       if (errorScreen) errorScreen.style.display = 'flex';
     });
 
     reopenBtn.addEventListener('click', () => {
-      const win = document.querySelector('.terminal-window');
+      const win = document.querySelector('.mac-terminal-window');
       if (errorScreen) errorScreen.style.display = 'none';
       if (win) {
         win.style.setProperty('display', 'flex', 'important');
@@ -160,30 +151,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-  // --------------------------------
 
-  const terminalSection = document.querySelector('#join');
+  // --- Terminal Typing Logic ---
+  const terminalSection = document.querySelector('#terminal-section');
   const lines = document.querySelectorAll('.typing-line');
   let terminalStarted = false;
 
   function getPromptHTML() {
     if (window.innerWidth <= 768 || 'ontouchstart' in window) {
-      return `<span style="color: var(--aws-mint);">❯</span>`;
+      return `<span style="color: var(--aws-mint);">➜</span> <span style="color: var(--aws-blue);">~</span>`;
     }
     const now = new Date();
     const timeString = now.toLocaleTimeString('es-CL', { hour12: false });
-    return `<span style="color: var(--aws-orange);">(${timeString})</span> <span style="color: var(--aws-mint);">git:(SBG-PlazaVespucio:main)</span><span style="color: white;">:</span>`;
+    return `<span style="color: var(--aws-orange);">[${timeString}]</span> <span style="color: var(--aws-mint);">builder@pv</span>:<span style="color: var(--aws-blue);">~/workspace</span> <span style="color: var(--text-light);">$</span>`;
   }
 
   function formatCommand(cmd) {
     const parts = cmd.split(' ');
     if (parts.length === 0) return '';
-    const base = `<span style="color: white;">${parts[0]}</span>`;
+    const base = `<span style="color: #fff; font-weight: 600;">${parts[0]}</span>`;
     const args = parts
       .slice(1)
       .map((arg) => {
         if (arg.startsWith('-')) {
-          return `<span style="color: #6c757d;">${arg}</span>`;
+          return `<span style="color: var(--aws-orange);">${arg}</span>`;
         }
         return `<span style="color: #a1aab5;">${arg}</span>`;
       })
@@ -212,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
       typeLines();
-    }, 300);
+    }, 200);
   };
 
   async function typeLines() {
@@ -229,6 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isCmd) {
         const promptSpan = document.createElement('div');
+        promptSpan.style.display = 'flex';
+        promptSpan.style.alignItems = 'center';
+        promptSpan.style.gap = '8px';
         promptSpan.innerHTML = getPromptHTML();
 
         const cmdSpan = document.createElement('span');
@@ -241,26 +235,26 @@ document.addEventListener('DOMContentLoaded', () => {
           if (currentSessionId !== sessionId) return;
           currentStr += char;
           cmdSpan.innerHTML = formatCommand(currentStr);
-          await new Promise((r) => setTimeout(r, 40));
+          await new Promise((r) => setTimeout(r, 35));
         }
       } else {
         for (let char of textToType) {
           if (currentSessionId !== sessionId) return;
           line.innerHTML += char;
-          await new Promise((r) => setTimeout(r, 5));
+          await new Promise((r) => setTimeout(r, 4));
         }
       }
 
       line.classList.remove('typing-cursor');
 
-      const terminalContent = document.querySelector('.terminal-content');
-      if (terminalContent) {
+      const terminalBody = document.querySelector('.mac-terminal-body');
+      if (terminalBody) {
         requestAnimationFrame(() => {
-          terminalContent.scrollTop = terminalContent.scrollHeight;
+          terminalBody.scrollTop = terminalBody.scrollHeight;
         });
       }
 
-      await new Promise((r) => setTimeout(r, 50));
+      await new Promise((r) => setTimeout(r, 40));
     }
 
     if (currentSessionId !== sessionId) return;
@@ -287,13 +281,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // --- Cursor Trail Logic ---
       const customCursor = document.getElementById('custom-cursor');
-      const cursorContainer = customCursor.parentElement;
+      const cursorContainer = customCursor ? customCursor.parentElement : null;
       let lastCursorX = 8;
 
       function getCursorOffset() {
         const span = document.createElement('span');
-        span.style.fontFamily = "'Space Mono', monospace";
-        span.style.fontSize = '0.9rem';
+        span.style.fontFamily = "'Fira Code', monospace";
+        span.style.fontSize = '0.95rem';
         span.style.visibility = 'hidden';
         span.style.whiteSpace = 'pre';
         span.textContent = terminalInput.value.substring(0, terminalInput.selectionStart);
@@ -304,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       function updateKittyCursor() {
-        if (!customCursor || !terminalInput) return;
+        if (!customCursor || !terminalInput || !cursorContainer) return;
         const width = getCursorOffset();
         const newX = 8 + width;
 
@@ -333,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
       terminalInput.addEventListener('keyup', () => setTimeout(updateKittyCursor, 10));
       terminalInput.addEventListener('click', updateKittyCursor);
 
-      const terminalBody = document.querySelector('.terminal-body');
+      const terminalBody = document.querySelector('.mac-terminal-body');
       if (terminalBody) {
         terminalBody.addEventListener('click', () => {
           if (window.getSelection().toString() === '') {
@@ -346,35 +340,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const commands = {
         help: () => `Comandos disponibles:
-<span style="color: var(--aws-mint);">help</span>       - Muestra esta lista de comandos
-<span style="color: var(--aws-mint);">links</span>      - Muestra todos los enlaces oficiales
-<span style="color: var(--aws-mint);">whoami</span>     - Muestra el usuario actual
+<span style="color: var(--aws-mint);">help</span>       - Lista todos los comandos
+<span style="color: var(--aws-mint);">links</span>      - Enlaces a nuestras redes oficiales
+<span style="color: var(--aws-mint);">free</span>       - Beneficios y cursos 100% gratuitos
+<span style="color: var(--aws-mint);">whoami</span>     - Información de usuario
 <span style="color: var(--aws-mint);">clear</span>      - Limpia la pantalla
-<span style="color: var(--aws-mint);">exit</span>       - Reinicia la animación
-<span style="color: var(--aws-mint);">info</span>       - Muestra información sobre SBG Plaza Vespucio`,
-        links: () => `<span style="color: var(--aws-orange);">--- ENLACES OFICIALES ---</span>
+<span style="color: var(--aws-mint);">exit</span>       - Reinicia la consola`,
+        free: () => `<span style="color: var(--aws-orange);">🎁 RECURSOS Y CURSOS GRATIS DISPONIBLES:</span>
+• <span style="color: var(--aws-purple);">IBM SkillsBuild:</span> Credenciales oficiales gratis en IA, Cloud y Ciberseguridad
+• <span style="color: var(--aws-mint);">AWS Skill Builder:</span> +600 cursos gratuitos de Amazon Web Services
+• <span style="color: var(--aws-blue);">Workshops SBG:</span> Talleres y guías de estudio para la sede Plaza Vespucio`,
+        links: () => `<span style="color: var(--aws-orange);">--- CANALES OFICIALES AWS SBG PLAZA VESPUCIO ---</span>
 • <span style="color: var(--aws-mint);">WhatsApp:</span> https://chat.whatsapp.com/K5fZKAhGUkjGcPiIHY8PK5
+• <span style="color: var(--aws-orange);">Meetup:</span> https://www.meetup.com/aws-sbg-at-duoc-uc-plaza-vespucio/
 • <span style="color: var(--aws-blue);">LinkedIn:</span> https://www.linkedin.com/company/aws-sbg-duoc-uc-pv
 • <span style="color: var(--aws-purple);">Instagram:</span> https://www.instagram.com/aws.sbg.duocpv/
-• <span style="color: var(--aws-magenta);">Meetup:</span> https://www.meetup.com/aws-sbg-at-duoc-uc-plaza-vespucio/
-• <span style="color: var(--aws-orange);">IBM SkillsBuild:</span> https://www.yourbigyear.com/ibm-skillsbuild-ambassador-program`,
-        whoami: () => `builder@plaza-vespucio`,
-        info: (args) => {
-          if (args.includes('--ALL') || args.includes('--all')) {
-            return `<span style="color: var(--aws-orange);">--- AWS SBG PLAZA VESPUCIO ---</span>
-<b>Organización:</b> AWS Student Builder Group at Duoc UC Plaza Vespucio
-<b>Misión:</b> Fomentar el desarrollo de habilidades Cloud, IA, metodologías ágiles y certificaciones técnicas.
-<b>Comunidad:</b> Abierta a todos los apasionados por la tecnología y la innovación en la nube.
-<br>
-<span style="color: var(--aws-blue);"><b>Programas & Alianzas:</b></span>
- • AWS Student Builder Groups
- • IBM SkillsBuild Ambassador Program
- • Talleres prácticos y preparación para exámenes AWS`;
-          }
-          return `AWS Student Builder Group Plaza Vespucio. Usa 'info --ALL' o 'links' para más datos.`;
-        },
-        sudo: () => `<span style="color: red;">Acceso concedido con privilegios de Builder 🚀</span>`,
-        rm: () => `<span style="color: red;">rm: operación denegada en modo seguro.</span>`,
+• <span style="color: var(--aws-magenta);">IBM Ambassador:</span> https://www.yourbigyear.com/ibm-skillsbuild-ambassador-program`,
+        whoami: () => `builder@plaza-vespucio (AWS SBG Community Member)`,
+        sudo: () => `<span style="color: var(--aws-mint);">Acceso concedido. ¡A construir en la nube! 🚀</span>`,
+        rm: () => `<span style="color: var(--mac-red);">Operación cancelada: el entorno está protegido.</span>`,
       };
 
       let commandHistory = [];
@@ -417,14 +401,14 @@ document.addEventListener('DOMContentLoaded', () => {
               if (commands[baseCmd]) {
                 output = commands[baseCmd](args);
               } else {
-                output = `<span style="color: red;">comando no encontrado: ${baseCmd}. Escribe 'help' para ver la lista.</span>`;
+                output = `<span style="color: var(--mac-red);">comando no encontrado: ${baseCmd}. Escribe 'help' para ver la lista.</span>`;
               }
 
               newEntry.innerHTML = `
                 <div style="display: flex; align-items: center; gap: 8px;">
                     ${interactivePrompt.innerHTML} <span>${formatCommand(commandStr)}</span>
                 </div>
-                <div style="color: #a1aab5; margin-top: 2px; line-height: 1.4; white-space: pre-line; font-size: 0.9rem; font-family: 'Space Mono', monospace;">${output}</div>
+                <div style="color: #a1aab5; margin-top: 3px; line-height: 1.5; white-space: pre-line; font-size: 0.92rem;">${output}</div>
               `;
               terminalHistory.appendChild(newEntry);
             }
@@ -434,10 +418,10 @@ document.addEventListener('DOMContentLoaded', () => {
           interactivePrompt.innerHTML = getPromptHTML();
           terminalInput.dispatchEvent(new Event('input'));
 
-          const terminalContent = document.querySelector('.terminal-content');
-          if (terminalContent) {
+          const terminalBody = document.querySelector('.mac-terminal-body');
+          if (terminalBody) {
             requestAnimationFrame(() => {
-              terminalContent.scrollTop = terminalContent.scrollHeight;
+              terminalBody.scrollTop = terminalBody.scrollHeight;
             });
           }
         } else if (e.key === 'ArrowUp') {
@@ -486,7 +470,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 0.3 }
   );
 
   if (terminalSection) {
